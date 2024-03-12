@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customize3D @ VisCommerce</title>
+  <link rel="stylesheet" href="src/style.css">
+  <script src="src/main.ts" defer type="module"></script>
+</head>
+
+<body>
+  <div id="ui-container">
+
+    <div class="spinner-container">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Add a switch for day and night light -->
+    <label class="switch" id="dayNightToggle">
+      <input type="checkbox" unchecked>
+      <span class="slider round"></span>
+    </label>
+
+    <!-- Sofa -->
+    <div class="accordion">
+      <button class="accordion-button" data-target="Sofa" onclick="toggleAccordion('Sofa')">Sofa</button>
+      <div class="accordion-content" id="Sofa">
+        <div class="button-container">
+          <!-- Leather options -->
+          <div class="accordion">
+            <button class="accordion-button" data-target="Leather" onclick="toggleAccordion('Leather')">Leather</button>
+            <div class="accordion-content" id="Leather">
+              <div class="button-container">
+                <button class="button">
+                  <img class="material-thumbnail-sofa" src="https://d2629xvaofl3d3.cloudfront.net/Leather1.png"
+                    data-material="Full Grain Brown leather" alt="Full_Grain_Brown_leather">
+                  <p class="image-name">Full grain Brown Leather</p>
+                </button>
+                <!-- <button class="button">
+                  <img class="material-thumbnail-sofa" src="https://d2629xvaofl3d3.cloudfront.net/Red Velvet.png"
+                    data-material="Red2" alt="Leather 3">
+                  <p class="image-name">Faux Red Leather</p>
+                </button> -->
+                <!-- <button class="button">
+                  <img class="material-thumbnail-sofa" src="https://d2629xvaofl3d3.cloudfront.net/suede.png"
+                    data-material="blue" alt="Leather 3">
+                  <p class="image-name">Lagoon Blue Leather</p>
+                </button> -->
+                <button class="button">
+                  <img class="material-thumbnail-sofa" src="https://d2629xvaofl3d3.cloudfront.net/Leather4.png"
+                    data-material="Orange" alt="Orange">
+                  <p class="image-name">Buckskin Leather</p>
+                </button>
+                <button class="button">
+                  <img class="material-thumbnail-sofa" src="https://d2629xvaofl3d3.cloudfront.net/Leather2.png"
+                    data-material="Blue Suede leather" alt="Blue Suede leather">
+                  <p class="image-name">Suede Blue Leather</p>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fabric options -->
+          <div class="accordion">
+            <button class="accordion-button" data-target="Fabric" onclick="toggleAccordion('Fabric')">Fabric</button>
+            <div class="accordion-content" id="Fabric">
+              <div class="button-container">
+                <button class="button">
+                  <img class="material-thumbnail-sofa" src="https://d2629xvaofl3d3.cloudfront.net/Dark Fabric.png"
+                    data-material="Dark Fabric" alt="Fabric 1">
+                  <p class="image-name">Brushed Cotton (Dark)</p>
+                </button>
+                <button class="button">
+                  <img class="material-thumbnail-sofa" src="https://d2629xvaofl3d3.cloudfront.net/Pink Fabric.png"
+                    data-material="Pink Fabric" alt="Fabric 2">
+                  <p class="image-name">Woven Wool (Pink)</p>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sofa - Velvet -->
+          <div class="accordion">
+      <button class="accordion-button" data-target="Velvet" onclick="toggleAccordion('Velvet')">Velvet</button>
+      <div class="accordion-content" id="Velvet">
+        <div class="button-container">
+          <button class="button">
+            <img class="material-thumbnail-sofa" src="https://d2629xvaofl3d3.cloudfront.net/Red Velvet.png"
+              data-material="Red Velvet" alt="Red Velvet">
+            <p class="image-name">Micro Velvet</p>
+          </button>
+        </div>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="accordion">
+      <button class="accordion-button" data-target="Table" onclick="toggleAccordion('Table')">Table</button>
+      <div class="accordion-content" id="Table">
+        <div class="button-container">
+          <!-- Metal options -->
+          <div class="accordion">
+            <button class="accordion-button" data-target="Metal" onclick="toggleAccordion('Metal')">Metal</button>
+            <div class="accordion-content" id="Metal">
+              <div class="button-container">
+                <!-- <button class="button">
+                  <img class="material-thumbnail-metal" src="https://d2629xvaofl3d3.cloudfront.net/Wrought Iron.png"
+                    data-material="Wrought_Iron" alt="wrought iron1">
+                  <p class="image-name">Wrought Iron</p>
+                </button> -->
+                <button class="button">
+                  <img class="material-thumbnail-metal" src="https://d2629xvaofl3d3.cloudfront.net/chrome.png"
+                    data-material="Chrome" alt="Chrome">
+                  <p class="image-name">Chrome</p>
+                </button>
+                <button class="button">
+                  <img class="material-thumbnail-metal" src="https://d2629xvaofl3d3.cloudfront.net/Brass.png"
+                    data-material="Brass" alt="Brass">
+                  <p class="image-name">Brass</p>
+                </button>
+                <!-- <button class="button">
+                  <img class="material-thumbnail-metal" src="https://d2629xvaofl3d3.cloudfront.net/chrome.png"
+                    data-material="Chrome" alt="Chrome">
+                  <p class="image-name">Chrome</p>
+                </button> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Glass options -->
+          <!-- <div class="accordion">
+            <button class="accordion-button" data-target="Glass" onclick="toggleAccordion('Glass')">Glass</button>
+            <div class="accordion-content" id="Glass">
+              <div class="button-container">
+                <button class="button">
+                  <img class="material-thumbnail-glass" src="https://d2629xvaofl3d3.cloudfront.net/frosted glass.png"
+                    data-material="Frosted_Glass" alt="frosted glass">
+                  <p class="image-name">Frosted Glass</p>
+                </button>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced -->
+    <div class="accordion">
+      <button class="accordion-button" onclick="toggleAccordion('Advanced')">Advanced</button>
+      <div class="accordion-content" id="Advanced">
+        <div class="buttonContainer"> Stats :
+          <input type="checkbox" id="statsToggle" checked>
+        </div>
+        <div class="buttonContainer"> AO :
+          <input type="checkbox" id="ssaoToggle">SSAO
+          <input type="checkbox" id="saoToggle">SAO
+        </div>
+        <div class="buttonContainer"> AA :
+          <input type="checkbox" id="smaaToggle">SMAA
+          <input type="checkbox" id="fxaaToggle">FXAA
+          <!-- <input type="checkbox" id="ssaaToggle">SSAA -->
+          <input type="checkbox" id="taaToggle">TAA
+        </div>
+        <div class="buttonContainer"> Floor Lamp :
+          <input type="checkbox" id="toggle">
+        </div>
+        <div class="buttonContainer"> Intensity :
+          <input style="width: 50%;" type="range" name="" id="intensity" value="50" max="1000" min="0" step="1">
+        </div>
+        <div class="buttonContainer">
+          <input style="appearance: none; border: none; width: 45px; height: 20px; padding-right: 10px;" type="color"
+            name="" id="color">
+        </div>
+        <div class="buttonContainer">
+          <!-- <label for="hdrToggle">HDR On/Off</label>
+          <input type="checkbox" id="hdrToggle" checked> -->
+          <label for="hdrIntensity">Tone Mapping :</label>
+          <input type="range" name="" id="intensity-hdri" value=".7" max="5" min=".1" step=".1">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="width: 80%; height: 100%;" id="canvas-container"></div>
+
+  <script>
+    // Function to toggle accordion content
+    function toggleAccordion(accordionId) {
+      const accordionContent = document.getElementById(accordionId);
+      // console.log('Accordion ID:', accordionId);
+      accordionContent.style.display = (accordionContent.style.display === 'block') ? 'none' : 'block';
+
+      const accordionButton = document.querySelector(`.accordion-button[data-target="${accordionId}"]`);
+      // console.log('Accordion Button:', accordionButton);
+      if (accordionButton) {
+        accordionButton.classList.toggle('active');
+      }
+    }
+  </script>
+</body>
+
+</html>
