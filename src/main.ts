@@ -61,9 +61,6 @@ const texturePaths: string[] = [
   'https://d2629xvaofl3d3.cloudfront.net/fabric_135_albedo-2K.jpeg',
   'https://d2629xvaofl3d3.cloudfront.net/fabric_135_normal-2K.jpeg',
   'https://d2629xvaofl3d3.cloudfront.net/fabric_135_roughness-2K.png',
-  'https://d2629xvaofl3d3.cloudfront.net/2K-velvet_2_basecolor.png',
-  'https://d2629xvaofl3d3.cloudfront.net/2K-velvet_2_normal.png',
-  'https://d2629xvaofl3d3.cloudfront.net/2K-velvet_2_metallic-2K-velvet_2_roughness.png'
 ];
 
 // Function to preload textures
@@ -99,32 +96,6 @@ preloadTextures()
   .catch((error) => {
     console.error('Error preloading textures:', error);
   });
-
-// Function to load textures and JSON data in parallel
-// async function loadTexturesAndJsonData() {
-//   try {
-//     // Load textures and fetch JSON data in parallel
-//     const [textureData, jsonData] = await Promise.all([
-//       loadTextures(),  // Function to load textures asynchronously
-//       fetchJsonData()  // Function to fetch JSON data asynchronously
-//     ]);
-
-//     // Process texture data and JSON data here
-//     processTextureData(textureData);
-//     processJsonData(jsonData);
-
-//     // Hide the progress container after loading is complete
-//     progressContainer.style.display = "none";
-//   } catch (error) {
-//     console.error('Error loading textures and JSON data:', error);
-//     // Hide the progress container in case of error
-//     progressContainer.style.display = "none";
-//   }
-// }
-
-// // Call the function to start parallel loading
-// loadTexturesAndJsonData();
-
 
 // Define a map to cache materials
 const materialCache = new Map();
@@ -398,6 +369,7 @@ if (dayNightToggle) {
         const modeSwitchStartTime = performance.now();
         // Switch to day mode (remove night lights, add day lights)
         addDirectionalLight(scene);
+
         // Add a new directional light for day mode      
         renderer.toneMappingExposure = 0.5;
 
@@ -527,7 +499,7 @@ function changeMaterialVariant(model: THREE.Object3D, selectedMeshNames: string[
 }
 
 function processJsonData() {
-  fetch("/Materials.json")
+  fetch("https://d2629xvaofl3d3.cloudfront.net/Materials.json")
     .then((response) => response.json())
     .then((data) => {
       jsonFiles = data;
@@ -729,8 +701,9 @@ processJsonData();
 
 function render() {
   renderer.render(scene, camera);
-  if (_composer)
+  if (_composer) {
     _composer.render();
+  }
 }
 
 animate();

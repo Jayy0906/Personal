@@ -4,14 +4,14 @@ import { TAARenderPass } from 'three/examples/jsm/postprocessing/TAARenderPass';
 
 export const composer = (renderer: THREE.WebGLRenderer, scene: THREE.Scene, camera: THREE.PerspectiveCamera) => {
     // Create the EffectComposer
-    const composer = new EffectComposer(renderer);
+    let composer = new EffectComposer(renderer);
     
     // Add RenderPass
     composer.addPass(new RenderPass(scene, camera));
 
     // FXAA
     const fxaaPass = new FXAAEffect({ blendFunction: BlendFunction.NORMAL });
-    const fxaaEffectPass = new EffectPass(camera, fxaaPass);
+    let fxaaEffectPass = new EffectPass(camera, fxaaPass);
 
     // SMAA
     const smaaPass = new SMAAEffect({
@@ -23,7 +23,7 @@ export const composer = (renderer: THREE.WebGLRenderer, scene: THREE.Scene, came
 
     // SSAO
     const normalPass = new NormalPass(scene, camera);
-    const ssaoPass = new SSAOEffect(camera, normalPass.texture, {
+    let ssaoPass = new SSAOEffect(camera, normalPass.texture, {
         worldDistanceThreshold: 20,
         worldDistanceFalloff: 5,
         worldProximityThreshold: 0.4,
@@ -39,7 +39,7 @@ export const composer = (renderer: THREE.WebGLRenderer, scene: THREE.Scene, came
     // TAA
     const taaRenderPass = new TAARenderPass(scene, camera);
     taaRenderPass.sampleLevel = 1;
-    const taaEffect = new EffectPass(camera);
+    let taaEffect = new EffectPass(camera);
 
     // Toggle listeners
     const elemFxaa = document.getElementById('fxaaToggle') as HTMLInputElement;
