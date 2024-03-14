@@ -34,7 +34,8 @@ let isDayMode = false; // Initial mode is day
 
 function setupHDRI() {
   const rgbeloader = new RGBELoader();
-  rgbeloader.load('https://d2629xvaofl3d3.cloudfront.net/neutral.hdr', (hdri) => {
+  // rgbeloader.load('hdri/gem_2.hdr', (hdri) => {
+  rgbeloader.load('https://d2629xvaofl3d3.cloudfront.net/gem_2.hdr', (hdri) => {
     const myhdr = hdri;
     myhdr.mapping = THREE.EquirectangularReflectionMapping;
     scene.environment = myhdr;
@@ -500,6 +501,7 @@ function changeMaterialVariant(model: THREE.Object3D, selectedMeshNames: string[
 
 function processJsonData() {
   fetch("https://d2629xvaofl3d3.cloudfront.net/Materials.json")
+  // fetch("public/Materials.json")
     .then((response) => response.json())
     .then((data) => {
       jsonFiles = data;
