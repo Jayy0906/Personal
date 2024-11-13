@@ -149,29 +149,28 @@ kinet.on('end', function() {
   console.log('end');
 });
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      message: document.getElementById('message').value
-  };
+// const form = document.getElementById('contact-form');
+// form.addEventListener('submit', async (e) => {
+//   e.preventDefault();
 
-  fetch('/send-email', { // change according to your domain
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-  })
-  .then(response => response.text())
-  .then(data => {
-      alert(data);
-      document.getElementById('contact-form').reset();
-  })
-  .catch(error => {
-      console.error('Error:', error);
-      alert('Failed to send message.');
-  });
-});
+//   const formData = new FormData(form);
+//   const data = Object.fromEntries(formData);
+
+//   try {
+//     const response = await fetch('/', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify(data),
+//     });    
+
+//     if (response.ok) {
+//       console.log('Email sent successfully!');
+//     } else {
+//       console.error('Failed to send email');
+//     }
+//   } catch (error) {
+//     console.error('Error:', error);
+//   }
+// });
